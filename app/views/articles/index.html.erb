@@ -1,0 +1,19 @@
+<h1>Bienvenue sur le FakeWiki</h1>
+
+<%= link_to "New article", new_article_path(@article) %>
+<ul>
+<%  @articles.each do |article| %>
+  <li>
+    <%= link_to article_path(article) do %>
+    <h3><%= article.title %></h3>
+    <% end %>
+    <ul>
+      <li>
+        <p><%= article.content %></p>
+      </li>
+    </ul>
+  </li>
+
+<% end %>
+
+</ul>
